@@ -88,10 +88,13 @@ static NSString *ChatCellIdentifier = @"chatCell";
     [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
     [self.prototypeCell layoutIfNeeded];
     [self.prototypeCell.labelMessage sizeToFit];
-    float height = self.prototypeCell.labelMessage.frame.size.height;
+    //float height = self.prototypeCell.labelMessage.frame.size.height;
+    float cellHeight = self.prototypeCell.frame.size.height;
+    float labelHeight = self.prototypeCell.labelMessage.frame.size.height;
+    float height = (labelHeight - cellHeight)/2+labelHeight;
     
     NSLog(@"Cell height: %f", height);
-    return height+14;
+    return height;//+16;   //16=8+8 -> top and bottom space constant values
 
     //NSLog(@"Cell height: %f", size.height);
     //return size.height;

@@ -26,8 +26,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQs-EJ-NmG" id="Ybj-df-GE3">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" Content tekst..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rv3-Sz-hHh">
-                                                    <rect key="frame" x="8" y="13" width="304" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text=" Content tekst..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rv3-Sz-hHh">
+                                                    <rect key="frame" x="8" y="8" width="304" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -36,7 +36,6 @@
                                             <constraints>
                                                 <constraint firstItem="Rv3-Sz-hHh" firstAttribute="leading" secondItem="Ybj-df-GE3" secondAttribute="leading" constant="8" id="HVr-yv-De4"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rv3-Sz-hHh" secondAttribute="trailing" constant="8" id="YsX-Ir-SVj"/>
-                                                <constraint firstItem="Rv3-Sz-hHh" firstAttribute="top" secondItem="Ybj-df-GE3" secondAttribute="top" constant="13" id="nOt-qW-uOh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
