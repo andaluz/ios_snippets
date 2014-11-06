@@ -57,7 +57,7 @@ static NSString *ChatCellIdentifier = @"chatCell";
         //textCell.labelMessage.numberOfLines = 0;
         //textCell.labelMessage.lineBreakMode = NSLineBreakByWordWrapping;
         textCell.labelMessage.text = @"Note that we set the preferred font for the two labels each time we configure the cell in case the user has changed the text size.";
-        [textCell.labelMessage sizeToFit];
+        //[textCell.labelMessage sizeToFit];
         //textCell.labelMessage.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     } else {
         NSLog(@"Cell is NOT of type DVChatCell");
@@ -91,7 +91,7 @@ static NSString *ChatCellIdentifier = @"chatCell";
     float height = self.prototypeCell.labelMessage.frame.size.height;
     
     NSLog(@"Cell height: %f", height);
-    return height;
+    return height+14;
 
     //NSLog(@"Cell height: %f", size.height);
     //return size.height;
