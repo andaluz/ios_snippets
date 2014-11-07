@@ -94,7 +94,7 @@ static NSString *ChatCellIdentifier = @"chatCell";
     float height = (labelHeight - cellHeight)/2+labelHeight;
     
     NSLog(@"Cell height: %f", height);
-    return height;//+16;   //16=8+8 -> top and bottom space constant values
+    return height;//+16;   //16=8+8 -> top and bottom space constraints constant values
 
     //NSLog(@"Cell height: %f", size.height);
     //return size.height;
