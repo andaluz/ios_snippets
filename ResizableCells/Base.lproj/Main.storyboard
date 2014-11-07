@@ -20,35 +20,46 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="100" id="gQs-EJ-NmG" customClass="DVChatCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="60" id="gQs-EJ-NmG" customClass="DVChatCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQs-EJ-NmG" id="Ybj-df-GE3">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouA-yQ-MYm">
-                                                    <rect key="frame" x="8" y="9" width="75" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23:24:38" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7u-P3-edo">
-                                                    <rect key="frame" x="255" y="12" width="57" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Content tekst..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rv3-Sz-hHh">
-                                                    <rect key="frame" x="8" y="34" width="104" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Content tekst..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rv3-Sz-hHh">
+                                                    <rect key="frame" x="8" y="28" width="304" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouA-yQ-MYm">
+                                                    <rect key="frame" x="8" y="4" width="75" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:24:38" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7u-P3-edo">
+                                                    <rect key="frame" x="255" y="4" width="57" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Rv3-Sz-hHh" firstAttribute="leading" secondItem="Ybj-df-GE3" secondAttribute="leading" constant="8" id="3CT-Bh-bOk"/>
+                                                <constraint firstItem="Rv3-Sz-hHh" firstAttribute="top" secondItem="ouA-yQ-MYm" secondAttribute="bottom" constant="4" id="5AT-vS-Xto"/>
+                                                <constraint firstItem="e7u-P3-edo" firstAttribute="top" secondItem="Ybj-df-GE3" secondAttribute="top" constant="4" id="9IM-HH-Vo8"/>
+                                                <constraint firstAttribute="trailing" secondItem="e7u-P3-edo" secondAttribute="trailing" constant="8" id="Ecs-wc-eqC"/>
+                                                <constraint firstItem="ouA-yQ-MYm" firstAttribute="top" secondItem="Ybj-df-GE3" secondAttribute="top" constant="4" id="Khh-OY-6aG"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rv3-Sz-hHh" secondAttribute="trailing" constant="8" id="evr-ez-SDE"/>
+                                                <constraint firstItem="ouA-yQ-MYm" firstAttribute="leading" secondItem="Ybj-df-GE3" secondAttribute="leading" constant="8" id="weX-Rb-xOO"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="labelMessage" destination="Rv3-Sz-hHh" id="6eV-3a-V8g"/>
+                                            <outlet property="labelTimestamp" destination="e7u-P3-edo" id="x7J-rd-qGO"/>
+                                            <outlet property="labelUser" destination="ouA-yQ-MYm" id="KVl-HU-TM2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -66,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309" y="384"/>
+            <point key="canvasLocation" x="309" y="380"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

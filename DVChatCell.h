@@ -11,6 +11,7 @@
 @interface DVChatCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *labelUser;
+@property (nonatomic, weak) IBOutlet UILabel *labelTimestamp;
 @property (nonatomic, weak) IBOutlet UILabel *labelMessage;
 
 @end

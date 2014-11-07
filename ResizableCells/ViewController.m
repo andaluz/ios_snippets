@@ -80,9 +80,11 @@ static NSString *ChatCellIdentifier = @"chatCell";
     [self.prototypeCell.labelMessage sizeToFit];
 
     float cellHeight = self.prototypeCell.frame.size.height;
-    float labelHeight = self.prototypeCell.labelMessage.frame.size.height;
+    float labelUserHeigth = self.prototypeCell.labelUser.frame.size.height;
+    float labelTimeHeigth = self.prototypeCell.labelTimestamp.frame.size.height;
+    float labelMessgeHeight = self.prototypeCell.labelMessage.frame.size.height;
     //float height = (labelHeight - cellHeight)/2+labelHeight;
-    float height = labelHeight;//+cellHeight/2;
+    float height = labelMessgeHeight+labelUserHeigth+labelTimeHeigth+8;//+cellHeight/2;
     
     NSLog(@"Cell height: %f", height);
     return height;
