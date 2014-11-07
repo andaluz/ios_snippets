@@ -20,9 +20,6 @@ static NSString *ChatCellIdentifier = @"chatCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    //self.tableView.estimatedRowHeight = 68.0;
-    //self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,55 +74,20 @@ static NSString *ChatCellIdentifier = @"chatCell";
 {
     if (!_prototypeCell)
         _prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:ChatCellIdentifier];
-    /*
-    [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
-
-    [self.prototypeCell setNeedsLayout];
-    [self.prototypeCell layoutIfNeeded];
     
-    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    */
     [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
     [self.prototypeCell layoutIfNeeded];
     [self.prototypeCell.labelMessage sizeToFit];
-    //float height = self.prototypeCell.labelMessage.frame.size.height;
+
     float cellHeight = self.prototypeCell.frame.size.height;
     float labelHeight = self.prototypeCell.labelMessage.frame.size.height;
-    float height = (labelHeight - cellHeight)/2+labelHeight;
+    //float height = (labelHeight - cellHeight)/2+labelHeight;
+    float height = labelHeight;//+cellHeight/2;
     
     NSLog(@"Cell height: %f", height);
-    return height;//+16;   //16=8+8 -> top and bottom space constraints constant values
-
-    //NSLog(@"Cell height: %f", size.height);
-    //return size.height;
-    //return 120.0f;
+    return height;
 }
 
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [self heightForBasicCellAtIndexPath:indexPath];
-    //return 120.0;
-}
 
-- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
-    static DVChatCell *sizingCell = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:ChatCellIdentifier];
-    });
-    
-    [self configureCell:sizingCell forRowAtIndexPath:indexPath];
-    return [self calculateHeightForConfiguredSizingCell:sizingCell];
-}
-
-- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
-    [sizingCell setNeedsLayout];
-    [sizingCell layoutIfNeeded];
-    
-    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return size.height;
-}
-*/
 
 @end
