@@ -46,16 +46,11 @@ static NSString *ChatCellIdentifier = @"chatCell";
 {
     if ([cell isKindOfClass:[DVChatCell class]])
     {
-        //NSLog(@"Cell is of type DVChatCell");
         DVChatCell *textCell = (DVChatCell *)cell;
-        //textCell.labelUser.text = [NSString stringWithFormat:@"Line %ld",(long)indexPath.row+1];
-        //textCell.labelUser.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-        
-        //textCell.labelMessage.numberOfLines = 0;
-        //textCell.labelMessage.lineBreakMode = NSLineBreakByWordWrapping;
-        textCell.labelMessage.text = @"Note that we set the preferred font for the two labels each time we configure the cell in case the user has changed the text size.";
-        //[textCell.labelMessage sizeToFit];
-        //textCell.labelMessage.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+
+        textCell.labelMessage.text = @"Note that we set the preferred font for the two labels each time we configure the cell in case the user has changed the text size. And this is a much longer message :)";
+        //textCell.labelMessage.text = @"Note that we set the preferred font for the two labels each time we configure the cell in case the user has changed the text size.";
+        //textCell.labelMessage.text = @"Een kort bericht.";
     } else {
         NSLog(@"Cell is NOT of type DVChatCell");
     }
@@ -69,27 +64,47 @@ static NSString *ChatCellIdentifier = @"chatCell";
     return _prototypeCell;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!_prototypeCell)
         _prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:ChatCellIdentifier];
     
     [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
-    [self.prototypeCell layoutIfNeeded];
     [self.prototypeCell.labelMessage sizeToFit];
+    [self.prototypeCell.labelUser sizeToFit];
+    [self.prototypeCell layoutIfNeeded];
+    [self.prototypeCell sizeToFit];
 
-    float cellHeight = self.prototypeCell.frame.size.height;
+    //float cellHeight = self.prototypeCell.frame.size.height;
+    float cellHeight = self.prototypeCell.contentView.frame.size.height;
     float labelUserHeigth = self.prototypeCell.labelUser.frame.size.height;
-    float labelTimeHeigth = self.prototypeCell.labelTimestamp.frame.size.height;
     float labelMessgeHeight = self.prototypeCell.labelMessage.frame.size.height;
-    //float height = (labelHeight - cellHeight)/2+labelHeight;
-    float height = labelMessgeHeight+labelUserHeigth+labelTimeHeigth+8;//+cellHeight/2;
+    
+    float height = labelMessgeHeight+labelUserHeigth+[self getDifferenceHeightOfMessage:labelMessgeHeight
+                                                                                 ofUser:labelUserHeigth
+                                                                                andCell:cellHeight];
     
     NSLog(@"Cell height: %f", height);
     return height;
+    
+    //CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    //return size.height;
 }
 
+- (float) getDifferenceHeightOfMessage: (float) msg ofUser: (float) user andCell: (float) cell {
+    float diff = 0;
+    float content = msg+user;
+    
+    if(content>cell) {
+        diff = content - cell;
+    } else {
+        diff = cell-content;
+    }
+    
+    //diff = cell;
+    
+    return diff-8;
+}
 
 
 @end
