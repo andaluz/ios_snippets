@@ -71,7 +71,7 @@ static NSString *ChatCellIdentifier = @"chatCell";
     
     [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
     [self.prototypeCell.labelMessage sizeToFit];
-    [self.prototypeCell.labelUser sizeToFit];
+    //[self.prototypeCell.labelUser sizeToFit];
     [self.prototypeCell layoutIfNeeded];
     [self.prototypeCell sizeToFit];
 
@@ -101,9 +101,9 @@ static NSString *ChatCellIdentifier = @"chatCell";
         diff = cell-content;
     }
     
-    //diff = cell;
+    diff = cell;
     
-    return diff-8;
+    return diff;//-16;
 }
 
 
